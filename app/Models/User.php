@@ -18,10 +18,23 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
+        'username',
         'email',
         'password',
+        'role'
     ];
+
+    // Relasi one-to-one dengan guru
+    public function guru()
+    {
+        return $this->hasOne(guru::class);
+    }
+
+    // Relasi one-to-one dengan orangtua
+    public function orangtua()
+    {
+        return $this->hasOne(orangtua::class);
+    }
 
     /**
      * The attributes that should be hidden for serialization.
