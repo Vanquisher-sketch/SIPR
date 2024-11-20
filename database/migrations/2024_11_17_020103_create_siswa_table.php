@@ -14,10 +14,11 @@ return new class extends Migration
         Schema::create('siswa', function (Blueprint $table) {
             $table->id();
             $table->string('nisn')->unique();
+            $table->string('nis');
             $table->string('nama_siswa');
             $table->date('tanggal_lahir');
             $table->text('alamat');
-            $table->foreignId('orang_tua_id')->constrained('orangtua')->cascadeOnDelete();
+            $table->foreignId('orangtua_id')->constrained('orangtua')->cascadeOnDelete();
             $table->timestamps();
         });
     }
