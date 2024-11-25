@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('nisn')->unique();
             $table->string('nis');
             $table->string('nama_siswa');
+            $table->enum('jenis_kelamin', ['L', 'P']);
             $table->date('tanggal_lahir');
             $table->text('alamat');
             $table->foreignId('orangtua_id')->constrained('orangtua')->cascadeOnDelete();
